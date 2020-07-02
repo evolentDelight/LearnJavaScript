@@ -1,3 +1,5 @@
 # JavaScript<br>
 
-Fundamentals and Complex Functionality
+Fundamentals and Complex Functionality<br><br>
+
+#Practice Makes Perfect
