@@ -1,34 +1,37 @@
 //My Solution
 
 class Group{
-  array = [];
 
-  Group(){
+  #array = [];
 
+  constructor(array){
+    this.#array = array;
   }
 
   has(value){
-    return this.array.includes(value);
+    return this.#array.includes(value);
   }
 
   add(value){
     if(!this.has(value)){
-      this.array.push(value);
+      this.#array.push(value);
     }
   }
 
   delete(value){
-
     if(this.has(value)){
-      index = this.array.indexOf(value);
-      this.array.splice(index, 1);
+      let index = this.#array.indexOf(value);
+      this.#array.splice(index, 1);
     }
   }
 
   static from(object){
+    let newCollection = [];
     for (const item of object){
-      this.add(item);
+      newCollection.push(item)
     }
+    console.log(newCollection)
+    return new Group(newCollection);
   }
 }
 
