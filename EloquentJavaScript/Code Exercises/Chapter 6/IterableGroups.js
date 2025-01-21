@@ -1,4 +1,4 @@
-//My Solution
+//My Solution == Textbook
 class Group {
 
   #array = []
@@ -26,5 +26,40 @@ class Group {
 
     return newGroup;
   }
+
+  [Symbol.iterator](){
+    return new GroupIterator(this.#array);
+  }
 }
 
+class GroupIterator{
+  #array;
+  #position
+
+  constructor(array){
+    this.#array = array;
+    this.#position = 0;
+  }
+
+  next(){
+    if(this.#position >= this.#array.length){
+      return{done: true};
+    } else{
+      let result = {value: this.#array[this.#position],
+        done: false};
+      this.#position++;
+      return result;
+    }
+  }
+}
+
+for (let value of Group.from(["a", "b", "c"])) {
+  console.log(value);
+}
+// → a
+// → b
+// → c
+
+//Not much to be said
+  //Learned how Symbol.iterator works
+  //built own iterator via next(), return {value, done}
