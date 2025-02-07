@@ -49,7 +49,7 @@ function runRobot(state, robot, memory) {
   for (let turn = 0;; turn++) {
     if (state.parcels.length == 0) {
       console.log(`Done in ${turn} turns`);
-      break;
+      return turn;
     }
     let action = robot(state, memory);
     state = state.move(action.direction);
@@ -118,3 +118,22 @@ function goalOrientedRobot({place, parcels}, route) {
   }
   return {direction: route[0], memory: route.slice(1)};
 }
+
+//My Solution
+
+function compareRobots(robot1, memory1, robot2, memory2){
+  let r1TotalSteps = 0;
+  let r2TotalSteps = 0;
+
+  for(let i = 0; i < 100; i++){
+    let newTask = VillageState.random();
+      r1TotalSteps += runRobot(newTask, robot1, memory1);
+      r2TotalSteps += runRobot(newTask, robot2, memory2)
+  }
+
+  console.log(`Average step for robot1{${robot1.name}}: ${r1TotalSteps/100} steps`);
+  console.log(`Average step for robot2{${robot2.name}}: ${r2TotalSteps/100} steps`);
+  
+}
+
+compareRobots(routeRobot, [], goalOrientedRobot, []);
