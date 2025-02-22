@@ -9,7 +9,14 @@ function primitiveMultiply(a, b) {
 }
 
 function reliableMultiply(a, b) {
-  // Your code here.
+  for(;;){
+    try{
+      let result = primitiveMultiply(a,b);
+      return result;
+    }catch(e){
+      console.log(e.name + ": " + e.message);
+    }
+  }
 }
 
 console.log(reliableMultiply(8, 8));
