@@ -21,3 +21,23 @@ function reliableMultiply(a, b) {
 
 console.log(reliableMultiply(8, 8));
 // → 64
+
+//Textbook Solution
+
+/*
+function reliableMultiply(a, b) {
+  for (;;) {
+    try {
+      return primitiveMultiply(a, b);
+    } catch (e) {
+      if (!(e instanceof MultiplicatorUnitFailure))
+        throw e;
+    }
+  }
+}
+*/
+
+//Differences:
+  //instead of initializing a variable to hold the return, MH simply returns it
+    //this is due to the catch already being taken into consideration
+  //There is no Error logged into console.
