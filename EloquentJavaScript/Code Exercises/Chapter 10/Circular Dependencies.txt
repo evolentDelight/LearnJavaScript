@@ -1,0 +1,12 @@
+The require function given earlier in this chapter supports this type of dependency cycle.
+  Can you see how it handles cycles?
+
+A:
+Apparently, the question is actually asking how it is possible
+  for CommonJS and require function enables dependency cycle
+  to happen.
+This is done due to the feature of the require function where
+  it "adds the interface object for a module to its cache
+  before it starts loading the module"
+  This ensures that the depended module already exists in
+    the program.
