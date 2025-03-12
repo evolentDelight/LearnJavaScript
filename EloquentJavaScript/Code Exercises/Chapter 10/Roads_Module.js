@@ -1,4 +1,5 @@
 // Add dependencies and exports
+import {buildGraph} from "./graph.js"
 
 const roads = [
   "Alice's House-Bob's House",   "Alice's House-Cabin",
@@ -9,3 +10,10 @@ const roads = [
   "Marketplace-Post Office",     "Marketplace-Shop",
   "Marketplace-Town Hall",       "Shop-Town Hall"
 ];
+
+export const roadGraph = buildGraph(roads);
+
+//Textbook Solution
+/* Apparently, the split must happen in this, even though graph.js provides it
+export const roadGraph = buildGraph(roads.map(r => r.split("-")));
+*/
