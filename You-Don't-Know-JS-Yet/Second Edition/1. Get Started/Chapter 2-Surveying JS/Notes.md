@@ -8,7 +8,7 @@
 ### Interpolation
   * Embedding or inserting variables, values, or expressions into a construct like a string to dynamically generate content
 
-## Best Practice:
+## Best Practices
 `undefined` vs `null`
   * use `undefined` as an empty value over null
 
