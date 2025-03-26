@@ -9,4 +9,6 @@ Table of Contents
 * [Appendix A: Exploring Further]()
 * [Appendix B: Practice, Practice, Practice!]()
 
+### Second edition
+
 Links are not set, yet.
