@@ -1,6 +1,7 @@
 ## Concepts
 ### Shallow-copy & Deep-copy
-* Shallow-copy affects nested objects by referencing it rather than copying it
+* Shallow-copy copies only the top-level structure, not nested
+* Shallow-copy gets nested objects by referencing it rather than copying it
   * Methods and Operators that create shallow copies
     * `...object` Spread Operator
     * `Object.assign()`
