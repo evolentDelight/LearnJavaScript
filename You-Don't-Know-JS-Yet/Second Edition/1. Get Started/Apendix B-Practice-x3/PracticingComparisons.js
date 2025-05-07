@@ -13,10 +13,15 @@ function scheduleMeeting(startTime, durationMinutes) {
   console.log("Test: ", startTime, durationMinutes);
 
   const meetingStartTime = convertStringToDate(startTime);
-  //Set meetingEndTime using placeholder
-  let placeholder = new Date(meetingStartTime);
-  const meetingEndTime = placeholder.setMinutes(
-    placeholder.getMinutes() + durationMinutes
+  // //Set meetingEndTime using placeholder
+  // let placeholder = new Date(meetingStartTime);
+  // const meetingEndTime = placeholder.setMinutes(
+  //   placeholder.getMinutes() + durationMinutes
+  // );
+
+  //Or create new Date from meetingStartTime number format
+  const meetingEndTime = new Date(meetingStartTime).setMinutes(
+    new Date(meetingStartTime).getMinutes() + durationMinutes
   );
 
   if (meetingStartTime >= dayStartTime) {
